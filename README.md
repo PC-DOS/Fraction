@@ -52,7 +52,7 @@
   
   静态成员函数，对给定的分数进行越分。
 
-###公开成员变量说明
+### 公开成员变量说明
 	
   static bool bIgnoreDivideZeroErrors;
   
@@ -68,6 +68,6 @@
   
   > _FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_NOERR 0 不处理
   
-  >_FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_WARN 1 提示出错
+  > _FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_WARN 1 提示出错
   
   > _FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_ABORT 2 提示出错并终止
