@@ -1,16 +1,16 @@
-﻿已經開始建置於 2018年3月9日 星期五 22:04:43。
-     1>節點 2 (Build 目標) 上的專案 "D:\C++\Fraction\Fraction\Fraction.vcxproj"。
+﻿已經開始建置於 2018年3月11日 星期日 23:00:46。
+     1>節點 2 (Rebuild 目標) 上的專案 "D:\C++\Fraction\Fraction\Fraction.vcxproj"。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
-     1>d:\c++\fraction\fraction\source.cpp(197): warning C4244: 'return' : 將 'double' 轉換為 '__int64'，由於類型不同，可能導致資料遺失
-     1>d:\c++\fraction\fraction\source.cpp(211): warning C4244: 'return' : 將 '__int64' 轉換為 'int'，由於類型不同，可能導致資料遺失
-     1>d:\c++\fraction\fraction\source.cpp(215): warning C4244: 'return' : 將 '__int64' 轉換為 'long'，由於類型不同，可能導致資料遺失
+     1>d:\c++\fraction\fraction\fraction.h(229): warning C4244: 'return' : 將 'double' 轉換為 '__int64'，由於類型不同，可能導致資料遺失
+     1>d:\c++\fraction\fraction\fraction.h(243): warning C4244: 'return' : 將 '__int64' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>d:\c++\fraction\fraction\fraction.h(247): warning C4244: 'return' : 將 '__int64' 轉換為 'long'，由於類型不同，可能導致資料遺失
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\C++\Fraction\Debug\Fraction.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\C++\Fraction\Debug\Fraction.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\C++\Fraction\Debug\Fraction.lib" /MACHINE:X86 Debug\Source.obj
          Fraction.vcxproj -> D:\C++\Fraction\Debug\Fraction.exe
-     1>專案 "D:\C++\Fraction\Fraction\Fraction.vcxproj" (Build 目標) 建置完成。
+     1>專案 "D:\C++\Fraction\Fraction\Fraction.vcxproj" (Rebuild 目標) 建置完成。
 
 建置成功。
 
-經過時間 00:00:00.58
+經過時間 00:00:00.68
