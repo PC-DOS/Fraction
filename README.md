@@ -19,6 +19,10 @@
   double ToDouble();
   
   将分数转换为浮点数。
+  
+  string ToString();
+  
+  将分数转换为"分子/分母"形式的字符串。
 	
   long long ToInt(bool bCeil);
   
@@ -30,7 +34,11 @@
 	
   Fraction Reduction();
   
-  将当前分数越分。
+  将当前分数约分。
+  
+  Fraction Reciprocate();
+  
+  将当前分数取倒数。
 	
   void SetValue(long long iNumerator, long long iDenominator);
   
