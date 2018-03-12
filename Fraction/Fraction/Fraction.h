@@ -1,7 +1,9 @@
+#ifndef _FRACTION_H_
 #define _FRACTION_H_
 #pragma once
 #include <iostream>
 #include <cmath>
+#include <string>
 using namespace std;
 
 #define _FRACTION_ZERO_DIVIDE -1;
@@ -95,12 +97,14 @@ public:
 	bool IsInteger();
 	double ToDouble();
 	long long ToInt(bool bCeil);
+	string ToString();
 	Fraction Numden(Fraction &fracFraction);
 	Fraction Reduction();
 	void SetValue(long long iNumerator, long long iDenominator);
 	void SetValue(long long iNum);
 	long long GetNumerator();
 	long long GetDenominator();
+	Fraction Reciprocate();
 
 	//Static functions
 	static Fraction Reduction(Fraction fracFraction);
@@ -132,9 +136,10 @@ Fraction::Fraction(long long iNumerator, long long iDenominator){
 		}
 		else if (iErrInputDenominatorZeroErrors == _FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_WARN){
 			cerr << "\nError: Zero denominator auto-recovery has been disabled due to security settings.\n";
+			iNumeratorVal = 0;
+			iDenominatorVal = 1;
 		}
 		else{
-
 			iNumeratorVal = 0;
 			iDenominatorVal = 1;
 		}
@@ -167,9 +172,10 @@ void Fraction::SetValue(long long iNumerator, long long iDenominator){
 		}
 		else if (iErrInputDenominatorZeroErrors == _FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_WARN){
 			cerr << "\nError: Zero denominator auto-recovery has been disabled due to security settings.\n";
+			iNumeratorVal = 0;
+			iDenominatorVal = 1;
 		}
 		else{
-
 			iNumeratorVal = 0;
 			iDenominatorVal = 1;
 		}
@@ -220,6 +226,34 @@ Fraction Fraction::Numden(Fraction &fracFraction){
 	return *this;
 }
 
+Fraction Fraction::Reciprocate(){
+	swap(iNumeratorVal, iDenominatorVal);
+	if (iDenominatorVal == 0){
+		if (iErrInputDenominatorZeroErrors == _FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_ABORT){
+			cerr << "\nError: Zero denominator auto-recovery has been disabled due to security settings.\n";
+			throw _FRACTION_ZERO_DENOMINATOR;
+		}
+		else if (iErrInputDenominatorZeroErrors == _FRACTION_ZERO_DENOMINATOR_ERROR_LEVEL_WARN){
+			cerr << "\nError: Zero denominator auto-recovery has been disabled due to security settings.\n";
+			iNumeratorVal = 0;
+			iDenominatorVal = 1;
+		}
+		else{
+			iNumeratorVal = 0;
+			iDenominatorVal = 1;
+		}
+	}
+	else if (iDenominatorVal < 0){
+		iNumeratorVal = -iNumeratorVal;
+		iDenominatorVal = -iDenominatorVal;
+	}
+	else{
+		iNumeratorVal = iNumeratorVal;
+		iDenominatorVal = iDenominatorVal;
+	}
+	return *this;
+}
+
 bool Fraction::IsInteger(){
 	return bool(iNumeratorVal%iDenominatorVal == 0);
 }
@@ -233,6 +267,10 @@ long long Fraction::ToInt(bool bCeil = false){
 
 double Fraction::ToDouble(){
 	return double(iNumeratorVal) / double(iDenominatorVal);
+}
+
+string Fraction::ToString(){
+	return to_string(iNumeratorVal) + "/" + to_string(iDenominatorVal);
 }
 
 Fraction::operator double(){
@@ -505,3 +543,4 @@ istream& operator>>(istream &isIn, Fraction &fracFraction){
 	}
 	return isIn;
 }
+#endif
